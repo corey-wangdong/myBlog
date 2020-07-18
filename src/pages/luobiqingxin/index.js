@@ -6,7 +6,7 @@ import GuShi from './gushi/index';
 import ShiGe from './shige/index';
 import ShuXiang from './shuxiang/index';
 
-const LuoBiQingXin = () => {
+const LuoBiQingXin = (props) => {
     return (
         <>
             {/* <Router> */}
