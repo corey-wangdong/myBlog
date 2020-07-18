@@ -9,7 +9,7 @@ import Home from './pages/home';
 import LuoBiQingXin from './pages/luobiqingxin';
 
 import './App.css';
-const App = () => {
+const App = (props: any) => {
     return (
         <>
             <Router>
