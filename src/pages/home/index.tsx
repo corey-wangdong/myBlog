@@ -3,12 +3,12 @@ import React from 'react';
 import { Ad } from '../../components';
 import Content from './Content/index';
 
-import '../css/home/home.css';
+import '../css/home/home.scss';
 
 import AdImg from '../../images/timg1.jpg';
 
 const Home = () => {
-    const adInfomation = (url) => {
+    const adInfomation = (url: string) => {
         return (
             <>
                 <a href="https://www.aliyun.com/minisite/goods?userCode=1naalk9l">

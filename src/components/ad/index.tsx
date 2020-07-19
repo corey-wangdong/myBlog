@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/ad.css';
+import '../css/ad.scss';
 
-const Ad = (props) => {
+const Ad = (props: any) => {
     console.log(props);
     return (
         <>
