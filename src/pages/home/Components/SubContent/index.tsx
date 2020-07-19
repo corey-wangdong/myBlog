@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../../../css/components/subContent.scss';
 
+import '../../../css/components/subContent.scss';
+interface ITitleText {
+    id: string;
+    value: string;
+    path: string;
+}
 const SubContent = (props: any) => {
     const [titleText, setTitleText] = useState([{}]);
     const [title, setTitle] = useState({ id: '', value: '' });

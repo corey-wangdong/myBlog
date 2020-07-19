@@ -17,7 +17,7 @@ const Title = () => {
             <div className="main-nav-title">
                 <div className="main-nav-title-info">轻语传言个人博客</div>
                 {titleText &&
-                    titleText.map((item) => {
+                    titleText.map((item: any) => {
                         return (
                             <div key={item.id}>
                                 <Link
