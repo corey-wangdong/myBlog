@@ -1,7 +1,65 @@
 @import '~antd/dist/antd.css';
-.warp {
-    max-width: 1200px;
+
+body {
+    background-color: #f4f5f7;
+}
+
+.blog-wrap {
+    width: 70%;
     margin: auto;
-    /* border: 1px solid #eee; */
-    /* background-color: #fff; */
+    background-color: #fff;
+}
+
+.blog-margin-top-10 {
+    margin-top: 10px;
+}
+
+.blog-margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.blog-margin-bottom-12 {
+    margin-bottom: 12px;
+}
+
+.blog-padding-20 {
+    padding: 20px;
+}
+
+.blog-font-size-16 {
+    font-size: 16px;
+}
+.blog-font-size-20 {
+    font-size: 20px;
+}
+
+.blog-border-radius-4 {
+    border-radius: 4px;
+}
+
+.blog-color-white {
+    color: #fff;
+}
+.blog-width-28 {
+    width: 28%;
+}
+.blog-width-70 {
+    width: 70%;
+}
+.blog-width-100 {
+    width: 100%;
+}
+
+.blog-height-100 {
+    height: 100%;
+}
+.blog-height-250px {
+    height: 250px;
+}
+.blog-display-flex-justify-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-bg-color-black {
+    background-color: #000;
 }

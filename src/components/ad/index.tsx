@@ -1,13 +1,23 @@
 import React from 'react';
+import classNames from 'classnames';
 import '../css/ad.scss';
 
-const Ad = (props: any) => {
-    console.log(props);
+interface IAd {
+    url:string;
+    href?:string;
+    alt?:string;
+    adStyle?:string;
+}
+export const AdContent = (props:IAd) => {
     return (
         <>
-            <div className="ad-style">{props.info}</div>
+
+            <a href={props.href}>
+                    <img className={classNames(props.adStyle,{
+                    'blog-width-100': !props.adStyle
+                    })}  src={props.url} alt={props.alt}/>
+                </a>
+            
         </>
     );
 };
-
-export default Ad;

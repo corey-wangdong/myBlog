@@ -1,10 +1,10 @@
 import React from 'react';
-
 const ShuXiang = () => {
     return (
         <>
-            <div className="">
+            <div>
                 <h2>书香</h2>
+
             </div>
         </>
     );

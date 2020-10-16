@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Title } from './components';
 import { Bottom } from './components';
@@ -13,7 +13,7 @@ const App = (props) => {
     return (
         <>
             <Router>
-                <div className="warp">
+            <div className="blog-wrap">
                     <Title />
                     <Switch>
                         <Route path="/home">
@@ -25,6 +25,7 @@ const App = (props) => {
                         <Route path="/liunian">
                             <About />
                         </Route>
+                        <Redirect from="/" to="/home" />
                     </Switch>
                     <Bottom />
                 </div>

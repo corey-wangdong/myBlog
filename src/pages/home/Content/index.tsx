@@ -4,44 +4,26 @@ import { Carousel } from 'antd';
 
 import { SubContent } from '../Components/index';
 
-import { Ad } from '../../../components/index';
-import AdImg from '../../../images/timg1.jpg';
+import { AdContent } from '../../../components/ad';
 
-import { Button } from 'antd';
-import { Progress } from 'antd';
-
-// https://img.alicdn.com/tfs/TB1dGCQbA9l0K4jSZFKXXXFjpXa-2360-160.png
-const Content = () => {
-    const adInfomation = (url: string) => {
-        return (
-            <>
-                <a href="https://www.aliyun.com/minisite/goods?userCode=1naalk9l">
-                    <img className="ad-img-style" src={url} />
-                </a>
-            </>
-        );
-    };
+interface IContent {
+    carouselData:string[];
+}
+const Content = (props:IContent) => {
+    let href = 'https://www.aliyun.com/minisite/goods?userCode=1naalk9l';
+    let adImgUrl = 'https://img.alicdn.com/tfs/TB1dGCQbA9l0K4jSZFKXXXFjpXa-2360-160.png';
     return (
         <>
-            <div className="coontent-banner">
+            <div className="blog-margin-bottom-10 blog-height-100px">
                 <Carousel autoplay>
-                    <div>
-                        <h3>1</h3>
-                    </div>
-                    <div>
-                        <h3>2</h3>
-                    </div>
-                    <div>
-                        <h3>3</h3>
-                    </div>
-                    <div>
-                        <h3>4</h3>
-                    </div>
+                    {(props.carouselData || []).map(item => {
+                        return <AdContent url={item} adStyle={'blog-width-100 blog-height-250px'}/>
+                    })}
                 </Carousel>
             </div>
             <div>
                 <SubContent info="writeDown" />
-                <Ad info={adInfomation(AdImg)} />
+                <AdContent href = {href} url = {adImgUrl} adStyle='blog-width-100 blog-margin-top-10 blog-margin-bottom-10'/>
                 <SubContent info="lightYear" />
                 <SubContent info="technicalTalk" />
                 <SubContent info="WebsiteBuilding" />
