@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import '../../../css/components/subContent.scss';
 
-import '../../../css/components/subContent.css';
-const SubContent = (props) => {
-    const [titleText, setTitleText] = useState([]);
-    const [title, setTitle] = useState([]);
-    const [titleTextContent, setTitleTextContent] = useState([]);
+import '../../../css/components/subContent.scss';
+interface ITitleText {
+    id: string;
+    value: string;
+    path: string;
+}
+const SubContent = (props: any) => {
+    const [titleText, setTitleText] = useState([{}]);
+    const [title, setTitle] = useState({ id: '', value: '' });
+    const [titleTextContent, setTitleTextContent] = useState('');
 
     useEffect(() => {
         if (props.info === 'writeDown') {
@@ -34,7 +40,7 @@ const SubContent = (props) => {
         }
     }, [props.info]);
 
-    const handleSubContent = (e) => {
+    const handleSubContent = (e: any) => {
         let currentId = e.target.id || '';
         console.log(currentId);
         if (currentId === '2') {
@@ -60,11 +66,11 @@ const SubContent = (props) => {
             <div className="sub-content">
                 <div className="sub-content-title">
                     <div id={title.id} className="content-title-one" onClick={handleSubContent}>
-                        {(title && title.value && title.value) || ''}-->
+                        {(title && title.value && title.value) || ''}
                     </div>
                     {titleText &&
                         titleText.length > 0 &&
-                        titleText.map((item) => {
+                        titleText.map((item: any) => {
                             return (
                                 <div id={item.id} onClick={handleSubContent}>
                                     {item.value}

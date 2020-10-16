@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { BrowserRouter as Router, Switch, Route, NavLink as Link } from 'react-router-dom';
 
-import '../css/title.css';
+import '../css/title.scss';
 
 const Title = () => {
     let titleText = [
@@ -17,10 +17,14 @@ const Title = () => {
             <div className="main-nav-title">
                 <div className="main-nav-title-info">轻语传言个人博客</div>
                 {titleText &&
-                    titleText.map((item) => {
+                    titleText.map((item: any) => {
                         return (
-                            <div key={item.id} href={item.href || ''}>
-                                <Link to={item.path} activeClassName="title-active">
+                            <div key={item.id}>
+                                <Link
+                                    to={item.path}
+                                    activeClassName="title-active"
+                                    href={item.path || ''}
+                                >
                                     {item.value}
                                     <TitleList id={item.id} />
                                 </Link>
@@ -32,8 +36,8 @@ const Title = () => {
     );
 };
 
-const TitleList = (props) => {
-    const [titleText, setTitleText] = useState([]);
+const TitleList = (props: any) => {
+    const [titleText, setTitleText] = useState([{ id: '', value: '', path: '' }]);
     useEffect(() => {
         if (props.id === '2') {
             setTitleText([
@@ -47,10 +51,12 @@ const TitleList = (props) => {
                 { id: '3-1', value: '吃喝玩乐', path: '/liunian/chihe' },
                 { id: '3-2', value: '心语杂谈', path: '/liunian/xinyu' },
             ]);
+        } else {
+            setTitleText([]);
         }
     }, [props.id]);
 
-    const handleTitleText = (value) => {
+    const handleTitleText = (value: any) => {
         console.log(value);
     };
 
@@ -59,9 +65,14 @@ const TitleList = (props) => {
             <ul>
                 {titleText &&
                     titleText.length > 0 &&
-                    titleText.map((item) => {
+                    titleText.map((item: any) => {
                         return (
-                            <li key={item.id} onClick={handleTitleText.bind(this, item.value)}>
+                            <li
+                                key={item.id}
+                                onClick={() => {
+                                    handleTitleText(item.value);
+                                }}
+                            >
                                 <Link to={item.path}>{item.value}</Link>
                             </li>
                         );

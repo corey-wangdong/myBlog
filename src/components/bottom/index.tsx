@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../css/bottom.css';
+import '../css/bottom.scss';
 
 const Bottom = () => {
     return (
