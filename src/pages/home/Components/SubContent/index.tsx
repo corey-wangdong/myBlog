@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../../../css/components/subContent.scss';
 
 import '../../../css/components/subContent.scss';
+import NewInfoList from '../NewInfoList';
+
 interface ITitleText {
     id: string;
     value: string;
@@ -78,7 +80,9 @@ const SubContent = (props: any) => {
                             );
                         })}
                 </div>
-                <div className="sub-content-title-content">{titleTextContent || ''} 你好骚啊</div>
+                <div className="sub-content-title-content blog-margin-top-10">
+                    <NewInfoList titleInfo = {title}/>
+                </div>
             </div>
         </>
     );

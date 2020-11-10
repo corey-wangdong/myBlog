@@ -32,6 +32,10 @@ body {
     font-size: 20px;
 }
 
+.blog-font-weight-bold {
+    font-weight: bold;
+}
+
 .blog-border-radius-4 {
     border-radius: 4px;
 }
@@ -39,6 +43,10 @@ body {
 .blog-color-white {
     color: #fff;
 }
+.blog-color-black {
+    color: #000;
+}
+
 .blog-width-28 {
     width: 28%;
 }

@@ -9,3 +9,41 @@
 .ant-carousel .slick-slide h3 {
     color: #fff;
 }
+
+.blog-new-info-list p {
+    line-height: 24px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    height: 48px;
+}
+
+.blog-new-info-list li {
+    overflow: hidden;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 20px;
+}
+.blog-new-info-list li:hover {
+    height: auto;
+    background: #f7f7f7;
+    a {
+        color: #000;
+        font-weight: bold;
+    }
+}
+// .blog-new-info-list li:hover :nth-child(1) {
+//     height: 22px;
+//     background: #f7f7f7;
+// }
+.blog-new-info-list li:nth-child(1) {
+    height: 100%;
+    background: #f7f7f7;
+}
+.blog-new-info-list li:nth-child(1) a {
+    color: #000;
+    font-weight: bold;
+}
