@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { Title } from './components';
 import { Bottom } from './components';
 
-import Home from './pages/home';
-import LuoBiQingXin from './pages/luobiqingxin';
+import Home from './containers/home';
+import LuoBiQingXin from './containers/luobiqingxin';
 
 import './App.css';
 const App = (props) => {
