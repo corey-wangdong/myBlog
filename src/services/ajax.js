@@ -5,11 +5,11 @@ const ajax = (url,data={},type='GET') => {
     return new Promise((resolve,reject) => {
         let promise = null;
         if(type === 'GET') {
-            promise =   axios.get(url,{
+            promise = axios.get(url,{
                 params:data
             })
         }else if(type==='POST') {
-            promise =  axios.post(url,data)
+            promise = axios.post(url,data)
         }
 
         promise.then(response => {

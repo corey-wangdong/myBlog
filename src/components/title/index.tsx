@@ -6,7 +6,7 @@ import {
   Route,
   NavLink as Link,
 } from 'react-router-dom';
-import { reqLogin } from '../../services';
+import { fetchInitData, reqLogin } from '../../services';
 
 import '../css/title.scss';
 
@@ -64,7 +64,9 @@ const TitleList = (props: any) => {
 
   const login = async () => {
     let response = await reqLogin('corey', '123456');
+    let response2 = await fetchInitData();
     console.log('response---', response);
+    console.log('response2---', response2);
   };
   const handleTitleText = (value: any) => {
     console.log(value);
