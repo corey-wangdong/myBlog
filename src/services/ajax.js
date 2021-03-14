@@ -13,11 +13,9 @@ const ajax = (url,data={},type='GET') => {
         }
 
         promise.then(response => {
-            console.log('response----',response)
             resolve(response.data)
         }).catch(error => {
-            console.log('error----',error);
-            reject()
+            reject('亲，数据请求失败了😭')
         })
     })
 }

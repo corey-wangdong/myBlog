@@ -2,24 +2,72 @@
     "blogName":"轻语传言个人博客",
     "blogTitle":[
         {
+            "id":"t_0",
+            "title":"首页",
+            "link":"/home",
+            "child":[]
+        },
+        {
+            "id":"t_1",
             "title":"落笔清心",
-            "subTitle":["书香浓墨","诗歌情调","故事连载"]
+            "link":"/qingxin",
+            "child":[
+                {
+                    "id":"t_1_1",
+                    "subTitle":"书香浓墨",
+                    "link":"/shuxiang"
+                },
+                {
+                    "id":"t_1_2",
+                    "subTitle":"诗歌情调",
+                    "link":"/shige"
+                },
+                {
+                    "id":"t_1_3",
+                    "subTitle":"故事连载",
+                    "link":"/gushi"
+                }
+            ]
         },
         {
+            "id":"t_2",
             "title":"淡淡流年",
-            "subTitle":["成长路上","吃喝玩乐","心与杂谈"]
+            "link":"/liunian",
+            "child":[
+                {
+                    "id":"t_2_1",
+                    "subTitle":"成长路上",
+                    "link":"/chengzhang"
+                },
+                {
+                    "id":"t_2_2",
+                    "subTitle":"吃喝玩乐",
+                    "link":"/chihe"
+                },
+                {
+                    "id":"t_2_3",
+                    "subTitle":"心与杂谈",
+                    "link":"/xinyu"
+                }
+            ]
         },
         {
+            "id":"t_3",
             "title":"技术之谈",
-            "subTitle":[]
+            "link":"/jitan",
+            "child":[]
         },
         {
+            "id":"t_4",
             "title":"案例展示",
-            "subTitle":[]
+            "link":"/case",
+            "child":[]
         },
         {
+            "id":"t_5",
             "title":"网站建设",
-            "subTitle":[]
+            "link":"/wangjian",
+            "child":[]
         }
     ],
    
