@@ -9,6 +9,7 @@ import { Bottom } from './components';
 
 import Home from './containers/home';
 import LuoBiQingXin from './containers/luobiqingxin';
+import JiYiXunLian from './containers/jiYiXunLian'
 
 import './App.css';
 
@@ -36,6 +37,21 @@ const App = (props) => {
                         <LuoBiQingXin />
                     </Route>
                     <Route path="/liunian">
+                        <About />
+                    </Route>
+                    <Route path="/jitan">
+                        <About />
+                    </Route>
+                    <Route path="/case">
+                        <LuoBiQingXin />
+                    </Route>
+                    <Route path="/wangjian">
+                        <About />
+                    </Route>
+                    <Route path="/jiyixunlian" component={JiYiXunLian}>
+                        
+                    </Route>
+                    <Route path="/other">
                         <About />
                     </Route>
                     <Redirect from="/" to="/home" />

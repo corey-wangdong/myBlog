@@ -6,7 +6,7 @@ import ajax from './ajax'
 // const BASEURL = '';
 
 // 1. 台式机路径
-// let BASEURL = 'http://192.168.0.100:5000';
+// let BASEURL = 'http://192.168.0.109:5000';
 
 // 2. 笔记本路径
 let BASEURL = 'http://127.0.0.01:5000';
@@ -14,6 +14,11 @@ let BASEURL = 'http://127.0.0.01:5000';
 // 1.获取页面初始数据
 export const fetchInitData = () => {
     return ajax(BASEURL + '/initData',{},'GET')
+}
+
+// 2. 获取记忆训练初始数据
+export const fetchMemoryData = () => {
+    return ajax(BASEURL + '/memory_data',{},'GET')
 }
 
 // 请求登陆接口.
