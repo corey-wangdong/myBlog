@@ -1,35 +1,66 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { fetchBlogData } from './redux/actions/fetchInitData';
+import { connect } from 'react-redux';
 
 import { Title } from './components';
 import { Bottom } from './components';
 
-import Home from './pages/home';
-import LuoBiQingXin from './pages/luobiqingxin';
+import Home from './containers/home';
+import LuoBiQingXin from './containers/luobiqingxin';
+import JiYiXunLian from './containers/jiYiXunLian'
 
 import './App.css';
+
 const App = (props) => {
+    console.log('props+++++', props);
+  const initData = props.initData.data;
+  const errMsg = props.initData.errMsg;
+  const isLoading = props.initData.isLoading;
+
     return (
         <>
-            <Router>
+        {isLoading ? (
+        <div>正在加载中...</div>
+      ) : errMsg && initData.length === 0 ? (
+        <div>{errMsg}</div>
+      ) : (
+        <Router>
             <div className="blog-wrap">
-                    <Title />
-                    <Switch>
-                        <Route path="/home">
-                            <Home />
-                        </Route>
-                        <Route path="/qingxin">
-                            <LuoBiQingXin />
-                        </Route>
-                        <Route path="/liunian">
-                            <About />
-                        </Route>
-                        <Redirect from="/" to="/home" />
-                    </Switch>
-                    <Bottom />
-                </div>
-            </Router>
+                <Title blogName = {initData &&initData.blogName || ''} blogTitle = {initData&&initData.blogTitle || []}/>
+                <Switch>
+                    <Route path="/home">
+                        <Home adContent = {initData&&initData.adContent || {}} bannerContent = {initData&&initData.bannerContent || []}/>
+                    </Route>
+                    <Route path="/qingxin">
+                        <LuoBiQingXin />
+                    </Route>
+                    <Route path="/liunian">
+                        <About />
+                    </Route>
+                    <Route path="/jitan">
+                        <About />
+                    </Route>
+                    <Route path="/case">
+                        <LuoBiQingXin />
+                    </Route>
+                    <Route path="/wangjian">
+                        <About />
+                    </Route>
+                    <Route path="/jiyixunlian" component={JiYiXunLian}>
+                        
+                    </Route>
+                    <Route path="/other">
+                        <About />
+                    </Route>
+                    <Redirect from="/" to="/home" />
+                </Switch>
+                <Bottom />
+            </div>
+        </Router>
+      )}
+            
         </>
     );
 };
@@ -41,5 +72,11 @@ function About() {
         </div>
     );
 }
-
-export default App;
+const mapStateToProps = (state) => {
+    return { initData: state.initData };
+  };
+  const mapDispatchToProps = (dispatch) => {
+    return () => dispatch(fetchBlogData());
+  };
+  
+export default connect(mapStateToProps, mapDispatchToProps)(App);
