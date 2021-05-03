@@ -13,11 +13,13 @@ import JiYiXunLian from './containers/jiYiXunLian'
 
 import './App.css';
 
+// export const {Provider,Consumer} = React.createContext("默认名称");
 const App = (props) => {
+    
     console.log('props+++++', props);
-  const initData = props.initData.data;
-  const errMsg = props.initData.errMsg;
-  const isLoading = props.initData.isLoading;
+    const initData = props.initData.data;
+    const errMsg = props.initData.errMsg;
+    const isLoading = props.initData.isLoading;
 
     return (
         <>
